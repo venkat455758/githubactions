@@ -1,0 +1,39 @@
+name: KK FUNDA Core Concepts Demo
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  build-job:
+    name: Build Stage
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build App
+        run: npm run build
+
+
+  test-job:
+    name: Testing Stage
+    runs-on: ubuntu-latest
+    needs: build-job
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Tests
+        run: npm test
