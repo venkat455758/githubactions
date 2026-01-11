@@ -1,0 +1,14 @@
+name: githubactions
+on:
+  workflow_dispatch:
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: env variables
+        env:
+          VENKAT: HEISBEST
+          THE: VNBE
+        run: |
+          echo "these $VENKAT from india"
+          echo "IT is more $THE"
