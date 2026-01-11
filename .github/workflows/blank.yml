@@ -37,3 +37,13 @@ jobs:
       - name:
         run:
           echo this is new deploy
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: run the another test
+        run: |
+          echo add to the another build
+          echo deploy,to the another project
+
