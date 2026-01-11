@@ -1,0 +1,26 @@
+name: Day1 GitHub Actions Demo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show system info
+        run: uname -a
+
+      - name: Install dependencies
+        run: echo "Installing dependencies..."
+
+      - name: Build project
+        run: echo "Build complete!"
+      - name: new one 
+        run: echo "hi installing"
