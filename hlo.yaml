@@ -1,19 +1,8 @@
-name: CI Pipeline
-
-on: [push]
-
+name: CICD
+on: push
 jobs:
-  build:
+  input_demO:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: npm install
-      - run: npm run build
-
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: npm install
-      - run: npm test
+      - name: v1
+        run: echo "this is from"
